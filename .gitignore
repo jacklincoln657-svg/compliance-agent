@@ -1,0 +1,27 @@
+# --- secrets / env ---
+.env
+.env.local
+*.pem
+
+# --- local-only interview / design notes (not for GitHub) ---
+_local/
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# --- runtime / generated ---
+chroma_db/
+workspace/*
+!workspace/_inbox/
+!workspace/_inbox/**
+
+# --- IDE / OS ---
+.dash_cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

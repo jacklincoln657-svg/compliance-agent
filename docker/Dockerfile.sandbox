@@ -1,0 +1,14 @@
+# CyberLobster 代码沙箱镜像：仅用于 execute_python_code
+# 预装与本机沙箱一致的数据分析库；运行时 --network none，只挂载 workspace
+FROM python:3.11-slim
+
+WORKDIR /workspace
+
+RUN pip install --no-cache-dir \
+    pandas \
+    numpy \
+    matplotlib \
+    plotly
+
+# 默认不设 ENTRYPOINT；由 docker create 传入 python /workspace/temp_sandbox_script.py
+CMD ["python", "--version"]
